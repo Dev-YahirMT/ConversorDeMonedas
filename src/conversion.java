@@ -18,7 +18,7 @@ public class conversion {
 
     @Override
     public String toString() {
-        String resupuesta = "----Resultados Conversión----\n"+unitaria+" "+base_code+" equivalen a 1 "+target_code+"\n"+mount+" "+base_code +" equivalen a "+result+" "+target_code+"\n------------";
+        String resupuesta = "----Resultados Conversión----\n1 "+base_code+" equivalen a "+unitaria+" "+target_code+"\n"+mount+" "+base_code +" equivalen a "+result+" "+target_code+"\n------------";
         return resupuesta;
     }
 }
