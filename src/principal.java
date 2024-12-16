@@ -49,7 +49,7 @@ public class principal {
                     realizarConversion("USD", "MXN");
                     break;
                 case 9:
-                    System.out.println("Gracias por utilizar el conversor de monedas. ¡Hasta luego!");
+                    System.out.println("Gracias por utilizar el conversor de monedas.");
                     break;
                 default:
                     System.out.println("Opción no válida. Intente nuevamente.");
@@ -67,9 +67,12 @@ public class principal {
             double cantidad = lectura.nextDouble();
             lectura.nextLine();
 
-            datosConsulta conversion = consulta.conversion(modenaOrigen,monedaDestino,cantidad);
-            System.out.println(conversion);
+            datosConsulta conversionResApi = consulta.conversion(modenaOrigen,monedaDestino,cantidad);
 
+            conversion resultado = new conversion(conversionResApi);
+            resultado.setMount(cantidad);
+
+            System.out.println(resultado);
             System.out.println("Presione Enter para continuar:");
             lectura.nextLine();
 

@@ -9,7 +9,7 @@ import java.sql.SQLOutput;
 public class consultaApi {
     public datosConsulta conversion(String modenaOrigen, String monedaDestino, Double monto){
 
-        String apiKey = "--------------------------";
+        String apiKey = "----------";
         String url = "https://v6.exchangerate-api.com/v6/"+apiKey+"/pair/"+modenaOrigen+"/"+monedaDestino+"/"+monto;
 
         URI direccion = URI.create(url);
