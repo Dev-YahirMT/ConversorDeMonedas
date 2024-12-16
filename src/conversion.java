@@ -4,9 +4,14 @@ public class conversion {
     private String base_code;
     private String target_code;
     private Double mount;
+    private String dateCreate;
 
     public void setMount(Double mount) {
         this.mount = mount;
+    }
+
+    public void setDateCreate(String dateCreate) {
+        this.dateCreate = dateCreate;
     }
 
     public conversion(datosConsulta conversionResApi) {
@@ -18,7 +23,7 @@ public class conversion {
 
     @Override
     public String toString() {
-        String resupuesta = "----Resultados Conversión----\n1 "+base_code+" equivalen a "+unitaria+" "+target_code+"\n"+mount+" "+base_code +" equivalen a "+result+" "+target_code+"\n------------";
+        String resupuesta = "----Resultados Conversión "+dateCreate+" ----\n1 "+base_code+" equivalen a "+unitaria+" "+target_code+"\n"+mount+" "+base_code +" equivalen a "+result+" "+target_code+"\n------------";
         return resupuesta;
     }
 }

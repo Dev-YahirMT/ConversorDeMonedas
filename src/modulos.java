@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class modulos {
     private static final Scanner lectura = new Scanner(System.in);
@@ -68,7 +70,20 @@ public class modulos {
             conversion resultado = new conversion(conversionResApi);
             resultado.setMount(cantidad);
 
+            LocalDateTime fechaHora = LocalDateTime.now();
+
+            // Definir el formato deseado
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
+            // Convertir fecha y hora al formato deseado
+            String fechaHoraFormateada = fechaHora.format(formato);
+
+            resultado.setDateCreate(fechaHoraFormateada);
+
             System.out.println(resultado);
+            generarArchivo generador = new generarArchivo();
+            generador.guardarJson(resultado);
+
             System.out.println("Presione Enter para continuar:");
             lectura.nextLine();
 
